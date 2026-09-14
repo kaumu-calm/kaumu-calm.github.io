@@ -2,7 +2,7 @@
 
 ## 公開先
 
-**https://nobimesi.github.io/kaumu-hp/**
+**https://kaumu-calm.github.io/**
 
 ログイン不要で、誰でも・どの端末からでも見られます。
 
