@@ -1,5 +1,30 @@
 # 訪問看護ステーションかうむ ホームページ
 
+## 公開先
+
+**https://nobimesi.github.io/kaumu-hp/**
+
+ログイン不要で、誰でも・どの端末からでも見られます。
+
+### 内容を更新したいとき
+
+1. このフォルダの中のファイルを直す
+2. ターミナルで以下を実行（1〜2分でネットに反映されます）
+
+```bash
+cd ~/kaumu-hp
+git add .
+git commit -m "お知らせを更新"
+git push
+```
+
+### 独自ドメイン（calm29.com）に変えたいとき
+
+1. GitHubのリポジトリ設定 → Pages → Custom domain に `kaumu.calm29.com` などを入力
+2. ドメインの管理画面で、CNAMEレコードを `nobimesi.github.io` に向ける
+3. **`index.html` の中の `og:url` と `og:image` のURLも新しいドメインに書き換える**
+   （LINEでURLを送ったときのサムネイル表示に使われているため）
+
 ## ファイルの中身
 
 | ファイル | 中身 |
