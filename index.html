@@ -1,0 +1,1058 @@
+<title>訪問看護ステーションかうむ｜尾張旭市の精神科訪問看護</title>
+
+<style>
+/* ============================================================
+   訪問看護ステーションかうむ  公式サイト
+   色・文字の設定はこの :root の中でまとめて変えられます
+   ============================================================ */
+:root{
+  --ground:#F5F3EC;
+  --ground-2:#EDEBE1;
+  --surface:#FFFFFF;
+  --ink:#2A3026;
+  --ink-soft:#5D665A;
+  --line:#DEDCD0;
+  --line-soft:#EAE8DD;
+  --accent:#5E7F4B;
+  --accent-deep:#3C5632;
+  --accent-soft:#C7D6B8;
+  --accent-wash:#E9EFE0;
+  --on-accent:#FBFCF8;
+  --req:#B4533F;
+  --shadow:0 1px 2px rgba(42,48,38,.05), 0 8px 24px -12px rgba(42,48,38,.18);
+  --shadow-lift:0 2px 4px rgba(42,48,38,.06), 0 14px 32px -14px rgba(42,48,38,.28);
+
+  --mincho:"Hiragino Mincho ProN","HiraMinProN-W3","Yu Mincho","YuMincho","Noto Serif JP","MS PMincho",serif;
+  --gothic:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic Medium","YuGothic","Noto Sans JP","Meiryo",sans-serif;
+
+  --wrap:1080px;
+  --header-h:72px;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --ground:#161A14;
+    --ground-2:#1B201A;
+    --surface:#1E231B;
+    --ink:#E9EBE3;
+    --ink-soft:#A9B1A3;
+    --line:#333A30;
+    --line-soft:#282E25;
+    --accent:#9DBE7C;
+    --accent-deep:#B9D29B;
+    --accent-soft:#3C4B34;
+    --accent-wash:#232A20;
+    --on-accent:#14180F;
+    --req:#E08A76;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
+    --shadow-lift:0 2px 4px rgba(0,0,0,.45), 0 14px 32px -14px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#161A14;
+  --ground-2:#1B201A;
+  --surface:#1E231B;
+  --ink:#E9EBE3;
+  --ink-soft:#A9B1A3;
+  --line:#333A30;
+  --line-soft:#282E25;
+  --accent:#9DBE7C;
+  --accent-deep:#B9D29B;
+  --accent-soft:#3C4B34;
+  --accent-wash:#232A20;
+  --on-accent:#14180F;
+  --req:#E08A76;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
+  --shadow-lift:0 2px 4px rgba(0,0,0,.45), 0 14px 32px -14px rgba(0,0,0,.7);
+}
+:root[data-theme="light"]{
+  --ground:#F5F3EC;
+  --ground-2:#EDEBE1;
+  --surface:#FFFFFF;
+  --ink:#2A3026;
+  --ink-soft:#5D665A;
+  --line:#DEDCD0;
+  --line-soft:#EAE8DD;
+  --accent:#5E7F4B;
+  --accent-deep:#3C5632;
+  --accent-soft:#C7D6B8;
+  --accent-wash:#E9EFE0;
+  --on-accent:#FBFCF8;
+  --req:#B4533F;
+  --shadow:0 1px 2px rgba(42,48,38,.05), 0 8px 24px -12px rgba(42,48,38,.18);
+  --shadow-lift:0 2px 4px rgba(42,48,38,.06), 0 14px 32px -14px rgba(42,48,38,.28);
+}
+
+*{box-sizing:border-box;}
+.kaumu{
+  background:var(--ground);
+  color:var(--ink);
+  font-family:var(--gothic);
+  font-size:17px;
+  line-height:1.9;
+  -webkit-font-smoothing:antialiased;
+  letter-spacing:.02em;
+  overflow-x:hidden;
+}
+.kaumu img{max-width:100%;display:block;}
+.kaumu a{color:inherit;}
+.wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:24px;}
+.narrow{max-width:780px;}
+
+/* ---------- ヘッダー ---------- */
+.site-header{
+  position:sticky;top:0;z-index:60;
+  background:color-mix(in srgb, var(--ground) 88%, transparent);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line-soft);
+}
+.header-inner{
+  max-width:var(--wrap);margin-inline:auto;padding:0 24px;
+  min-height:var(--header-h);
+  display:flex;align-items:center;gap:20px;
+}
+.brand{display:flex;align-items:baseline;gap:10px;text-decoration:none;flex:0 0 auto;}
+.brand-mark{
+  font-family:var(--mincho);font-size:1.5rem;font-weight:600;
+  letter-spacing:.14em;color:var(--accent-deep);line-height:1;
+}
+.brand-sub{font-size:.7rem;letter-spacing:.14em;color:var(--ink-soft);white-space:nowrap;}
+.nav{margin-left:auto;display:flex;align-items:center;gap:4px;}
+.nav a{
+  text-decoration:none;font-size:.9rem;padding:10px 14px;border-radius:4px;
+  color:var(--ink-soft);transition:color .2s, background .2s;white-space:nowrap;
+}
+.nav a:hover{color:var(--accent-deep);background:var(--accent-wash);}
+.nav a.is-current{color:var(--accent-deep);font-weight:700;}
+.header-tel{
+  display:flex;flex-direction:column;align-items:flex-end;gap:0;
+  padding-left:18px;margin-left:4px;border-left:1px solid var(--line);
+}
+.header-tel .label{font-size:.62rem;letter-spacing:.16em;color:var(--ink-soft);}
+.header-tel .num{
+  font-size:1.12rem;font-weight:700;letter-spacing:.03em;color:var(--accent-deep);
+  text-decoration:none;font-variant-numeric:tabular-nums;line-height:1.3;
+}
+.burger{
+  display:none;margin-left:auto;width:44px;height:44px;border:1px solid var(--line);
+  border-radius:6px;background:var(--surface);cursor:pointer;padding:0;
+  align-items:center;justify-content:center;flex-direction:column;gap:5px;
+}
+.burger span{display:block;width:19px;height:1.5px;background:var(--ink);transition:transform .25s, opacity .2s;}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0;}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+
+/* ---------- 共通パーツ ---------- */
+.page{display:none;}
+.page.is-active{display:block;animation:pagein .5s ease both;}
+@keyframes pagein{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+
+.section{padding:clamp(56px,8vw,92px) 0;}
+.section + .section{padding-top:0;}
+.section-head{margin-bottom:clamp(28px,4vw,44px);}
+.eyebrow{
+  display:inline-block;font-size:.68rem;letter-spacing:.24em;color:var(--accent);
+  margin-bottom:12px;
+}
+.section-title{
+  font-family:var(--mincho);font-weight:600;
+  font-size:clamp(1.45rem,3.2vw,2.05rem);
+  line-height:1.5;letter-spacing:.06em;margin:0;text-wrap:balance;
+}
+.section-title .thin{color:var(--ink-soft);font-size:.62em;letter-spacing:.1em;display:block;margin-top:8px;}
+.lead{color:var(--ink-soft);margin-top:14px;max-width:62ch;}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:15px 30px;border-radius:999px;text-decoration:none;
+  font-size:.95rem;font-weight:700;letter-spacing:.06em;
+  transition:transform .2s, box-shadow .2s, background .2s;
+}
+.btn-primary{background:var(--accent-deep);color:var(--on-accent);box-shadow:var(--shadow);}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow-lift);}
+.btn-ghost{background:var(--surface);color:var(--accent-deep);border:1px solid var(--accent-soft);}
+.btn-ghost:hover{background:var(--accent-wash);transform:translateY(-2px);}
+
+/* キーボード操作時に、今どこを選んでいるか分かるようにする */
+.kaumu a:focus-visible,
+.kaumu button:focus-visible,
+.kaumu input:focus-visible,
+.kaumu select:focus-visible,
+.kaumu textarea:focus-visible{
+  outline:2px solid var(--accent);outline-offset:3px;border-radius:4px;
+}
+.kaumu code{
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em;
+  background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 6px;
+}
+
+/* ---------- ヒーロー ---------- */
+.hero{position:relative;overflow:hidden;padding-top:clamp(40px,6vw,68px);padding-bottom:clamp(48px,7vw,84px);}
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(120% 80% at 78% 0%, var(--accent-wash) 0%, transparent 62%),
+    linear-gradient(180deg, var(--ground-2) 0%, var(--ground) 60%);
+}
+.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1.18fr .82fr;gap:clamp(28px,4.5vw,56px);align-items:center;}
+.hero-copy{max-width:40ch;}
+.hero-kicker{
+  font-size:.72rem;letter-spacing:.26em;color:var(--accent);margin-bottom:20px;
+}
+.hero-title{
+  font-family:var(--mincho);font-weight:600;
+  font-size:clamp(1.6rem,3.3vw,2.35rem);
+  line-height:1.7;letter-spacing:.07em;margin:0;
+}
+.hero-title em{
+  font-style:normal;white-space:nowrap;
+  background:linear-gradient(to top, color-mix(in srgb, var(--accent-soft) 62%, transparent) 34%, transparent 34%);
+}
+.hero-text{margin-top:22px;color:var(--ink-soft);font-size:1rem;}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;}
+.hero-photo{position:relative;}
+.hero-photo img{
+  width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;
+  border-radius:180px 180px 12px 12px;box-shadow:var(--shadow-lift);
+}
+.hero-caption{
+  position:absolute;left:-18px;bottom:14px;max-width:232px;
+  background:var(--surface);border:1px solid var(--line-soft);
+  padding:12px 18px;border-radius:8px;box-shadow:var(--shadow);
+  font-family:var(--mincho);font-size:.82rem;letter-spacing:.06em;line-height:1.65;
+}
+.hero-caption b{display:block;color:var(--accent-deep);font-size:.98rem;letter-spacing:.14em;font-weight:600;margin-bottom:2px;}
+
+/* ---------- かうむとは ---------- */
+.calm-card{
+  background:var(--surface);border:1px solid var(--line-soft);border-radius:12px;
+  padding:clamp(28px,4.4vw,48px);box-shadow:var(--shadow);
+  display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,4vw,48px);align-items:center;
+}
+.calm-word{text-align:center;padding-right:clamp(24px,4vw,48px);border-right:1px solid var(--line-soft);}
+.calm-word .jp{font-family:var(--mincho);font-size:clamp(1.8rem,3.6vw,2.5rem);letter-spacing:.2em;color:var(--accent-deep);line-height:1.3;}
+.calm-word .eq{color:var(--ink-soft);font-size:.8rem;letter-spacing:.2em;margin:6px 0;}
+.calm-word .en{font-size:1.5rem;letter-spacing:.22em;color:var(--accent);font-weight:300;font-family:var(--mincho);}
+.calm-word .mean{font-size:.8rem;color:var(--ink-soft);letter-spacing:.14em;margin-top:4px;}
+
+/* ---------- 特長リスト ---------- */
+.features{display:flex;flex-direction:column;gap:0;}
+.feature{
+  display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,3.5vw,40px);
+  padding:clamp(26px,3.6vw,38px) 0;border-top:1px solid var(--line);
+}
+.feature:last-child{border-bottom:1px solid var(--line);}
+.feature-no{
+  font-family:var(--mincho);font-size:.85rem;letter-spacing:.14em;color:var(--accent);
+  padding-top:.45em;white-space:nowrap;
+}
+.feature h3{
+  font-family:var(--mincho);font-weight:600;font-size:clamp(1.1rem,2.1vw,1.32rem);
+  letter-spacing:.06em;margin:0 0 12px;line-height:1.6;
+}
+.feature p{margin:0;color:var(--ink-soft);}
+.feature p + p{margin-top:12px;}
+.feature .quote{
+  font-family:var(--mincho);color:var(--accent-deep);
+  border-left:2px solid var(--accent-soft);padding-left:16px;margin:14px 0;
+}
+.care-list{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:10px;}
+.care-list li{position:relative;padding-left:26px;color:var(--ink-soft);}
+.care-list li::before{
+  content:"";position:absolute;left:6px;top:.78em;width:7px;height:7px;
+  border-radius:50%;background:var(--accent-soft);
+}
+
+/* ---------- 書類ボタン ---------- */
+.docs{background:var(--ground-2);border-block:1px solid var(--line-soft);}
+.doc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;}
+.doc-btn{
+  display:flex;align-items:center;gap:16px;text-decoration:none;
+  background:var(--surface);border:1px solid var(--line);border-radius:10px;
+  padding:20px 22px;box-shadow:var(--shadow);
+  transition:transform .2s, box-shadow .2s, border-color .2s;
+}
+.doc-btn:hover{transform:translateY(-2px);box-shadow:var(--shadow-lift);border-color:var(--accent-soft);}
+.doc-icon{
+  flex:0 0 auto;width:34px;height:34px;border-radius:6px;background:var(--accent-wash);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--accent-deep);font-size:.62rem;font-weight:700;letter-spacing:.04em;
+}
+.doc-label{display:flex;flex-direction:column;gap:2px;line-height:1.55;}
+.doc-label .t{font-size:1rem;font-weight:700;}
+.doc-label .s{font-size:.74rem;color:var(--ink-soft);letter-spacing:.08em;}
+
+/* ---------- お知らせ ---------- */
+.news-list{display:flex;flex-direction:column;}
+.news-item{
+  display:grid;grid-template-columns:auto auto 1fr;gap:20px;align-items:baseline;
+  padding:20px 4px;border-bottom:1px solid var(--line-soft);
+}
+.news-date{font-size:.85rem;color:var(--ink-soft);font-variant-numeric:tabular-nums;letter-spacing:.06em;white-space:nowrap;}
+.news-tag{
+  font-size:.68rem;letter-spacing:.1em;padding:3px 12px;border-radius:999px;
+  background:var(--accent-wash);color:var(--accent-deep);white-space:nowrap;
+  min-width:6.2em;text-align:center;
+}
+.news-title{margin:0;font-size:1rem;font-weight:400;line-height:1.7;}
+.news-sample{
+  margin-top:20px;font-size:.84rem;color:var(--ink-soft);
+  background:var(--accent-wash);border-radius:8px;padding:14px 18px;line-height:1.8;
+}
+
+/* ---------- 事業所概要 ---------- */
+.philosophy{
+  background:var(--surface);border:1px solid var(--line-soft);border-radius:12px;
+  padding:clamp(30px,5vw,56px);box-shadow:var(--shadow);
+}
+.philosophy p{font-family:var(--mincho);font-size:clamp(1rem,1.9vw,1.12rem);line-height:2.15;letter-spacing:.05em;margin:0 0 1.2em;}
+.philosophy p:last-child{margin-bottom:0;}
+.philosophy .strong{
+  font-size:clamp(1.2rem,2.6vw,1.5rem);color:var(--accent-deep);letter-spacing:.12em;
+  text-align:center;margin:1.6em 0;
+}
+.table-wrap{overflow-x:auto;}
+.info-table{width:100%;border-collapse:collapse;font-size:.95rem;min-width:520px;}
+.info-table th,.info-table td{text-align:left;padding:16px 18px;border-bottom:1px solid var(--line-soft);vertical-align:top;line-height:1.85;}
+.info-table th{
+  width:34%;font-weight:700;color:var(--ink-soft);font-size:.85rem;letter-spacing:.1em;
+  background:var(--ground-2);white-space:nowrap;
+}
+.info-table td{background:var(--surface);}
+.info-table .ruby{font-size:.72rem;color:var(--ink-soft);letter-spacing:.14em;display:block;}
+.info-table a{color:var(--accent-deep);}
+
+/* ---------- お問い合わせ ---------- */
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;}
+.contact-card{
+  background:var(--surface);border:1px solid var(--line-soft);border-radius:12px;
+  padding:28px 26px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:6px;
+}
+.contact-card .ttl{font-size:.7rem;letter-spacing:.2em;color:var(--accent);}
+.contact-card .val{
+  font-size:1.5rem;font-weight:700;letter-spacing:.04em;color:var(--accent-deep);
+  text-decoration:none;font-variant-numeric:tabular-nums;line-height:1.5;
+}
+.contact-card .val.mail{font-size:.94rem;letter-spacing:0;overflow-wrap:anywhere;line-height:1.7;}
+.contact-card .note{font-size:.82rem;color:var(--ink-soft);line-height:1.75;}
+
+.form{
+  background:var(--surface);border:1px solid var(--line-soft);border-radius:12px;
+  padding:clamp(26px,4vw,44px);box-shadow:var(--shadow);display:grid;gap:20px;
+}
+.field{display:grid;gap:8px;}
+.field label{font-size:.85rem;font-weight:700;letter-spacing:.08em;}
+.field .req{color:var(--req);font-size:.72rem;margin-left:6px;letter-spacing:.1em;}
+.field input,.field select,.field textarea{
+  font:inherit;font-size:1rem;color:var(--ink);background:var(--ground);
+  border:1px solid var(--line);border-radius:8px;padding:13px 15px;width:100%;
+}
+.field textarea{min-height:150px;resize:vertical;line-height:1.8;}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:2px solid var(--accent);outline-offset:1px;border-color:transparent;
+}
+.form-note{font-size:.82rem;color:var(--ink-soft);line-height:1.8;}
+
+/* ---------- フッター ---------- */
+.site-footer{
+  background:var(--ground-2);border-top:1px solid var(--line-soft);
+  padding:48px 0 calc(40px + env(safe-area-inset-bottom));margin-top:clamp(48px,7vw,88px);
+}
+.footer-inner{display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between;align-items:flex-start;}
+.footer-brand .brand-mark{font-size:1.35rem;}
+.footer-addr{font-size:.85rem;color:var(--ink-soft);line-height:1.95;margin-top:12px;}
+.footer-nav{display:flex;flex-wrap:wrap;gap:6px 22px;}
+.footer-nav a{font-size:.85rem;color:var(--ink-soft);text-decoration:none;}
+.footer-nav a:hover{color:var(--accent-deep);}
+.copyright{margin-top:36px;font-size:.74rem;color:var(--ink-soft);letter-spacing:.08em;}
+
+/* ---------- スマホ下部の電話バー ---------- */
+.mobile-bar{
+  display:none;position:fixed;left:0;right:0;bottom:0;z-index:70;
+  background:var(--surface);border-top:1px solid var(--line);
+  padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+  gap:10px;box-shadow:0 -6px 20px -12px rgba(0,0,0,.4);
+}
+.mobile-bar a{
+  flex:1;display:flex;align-items:center;justify-content:center;gap:8px;
+  padding:14px 8px;border-radius:999px;text-decoration:none;
+  font-size:.92rem;font-weight:700;letter-spacing:.06em;
+}
+.mobile-bar .m-tel{background:var(--accent-deep);color:var(--on-accent);}
+.mobile-bar .m-mail{background:var(--accent-wash);color:var(--accent-deep);border:1px solid var(--accent-soft);}
+
+/* ---------- フェードイン ---------- */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .7s ease, transform .7s ease;}
+.reveal.is-in{opacity:1;transform:none;}
+
+/* ---------- レスポンシブ ---------- */
+@media (max-width:900px){
+  .hero-inner{grid-template-columns:1fr;}
+  .hero-copy{max-width:none;}
+  .hero-photo{order:-1;}
+  .hero-photo img{aspect-ratio:16/10;height:auto;border-radius:12px;}
+  .hero-caption{position:static;margin:-22px 20px 0;display:inline-block;max-width:none;}
+  .calm-card{grid-template-columns:1fr;}
+  .calm-word{border-right:none;border-bottom:1px solid var(--line-soft);padding-right:0;padding-bottom:24px;}
+}
+@media (max-width:820px){
+  :root{--header-h:62px;}
+  .nav{
+    position:fixed;inset:var(--header-h) 0 auto 0;flex-direction:column;align-items:stretch;gap:0;
+    background:var(--surface);border-bottom:1px solid var(--line);
+    padding:8px 16px 20px;box-shadow:var(--shadow-lift);
+    transform:translateY(-120%);transition:transform .28s ease;margin-left:0;
+  }
+  .nav.is-open{transform:none;}
+  .nav a{padding:15px 8px;border-bottom:1px solid var(--line-soft);font-size:1rem;border-radius:0;}
+  .header-tel{display:none;}
+  .burger{display:flex;}
+  .kaumu{padding-bottom:84px;}
+  .mobile-bar{display:flex;}
+  .feature{grid-template-columns:1fr;gap:8px;}
+  .feature-no{padding-top:0;}
+  .news-item{grid-template-columns:auto auto;gap:10px 14px;}
+  .news-title{grid-column:1/-1;}
+  .info-table{min-width:0;}
+  .info-table,.info-table tbody,.info-table tr,.info-table th,.info-table td{display:block;width:100%;}
+  .info-table th{border-bottom:none;padding-bottom:8px;border-radius:6px 6px 0 0;}
+  .info-table td{padding-top:8px;padding-bottom:20px;}
+}
+@media (max-width:420px){
+  .kaumu{font-size:16.5px;}
+  .wrap{padding-inline:18px;}
+  .brand-sub{display:none;}
+}
+@media (prefers-reduced-motion: reduce){
+  .kaumu *,.kaumu *::before,.kaumu *::after{animation-duration:.001ms !important;transition-duration:.001ms !important;}
+  .reveal{opacity:1;transform:none;}
+}
+</style>
+
+<div class="kaumu">
+
+<!-- ============ ヘッダー ============ -->
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#home">
+      <span class="brand-mark">かうむ</span>
+      <span class="brand-sub">訪問看護ステーション</span>
+    </a>
+    <button class="burger" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mainnav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="mainnav">
+      <a href="#home">ホーム</a>
+      <a href="#about">かうむについて</a>
+      <a href="#company">事業所概要</a>
+      <a href="#news">お知らせ</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+    <div class="header-tel">
+      <span class="label">お気軽にお電話ください</span>
+      <a class="num" href="tel:0561502229">0561-50-2229</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============================================================
+     トップページ
+     ============================================================ -->
+<section class="page is-active" id="page-home">
+
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <p class="hero-kicker">尾張旭市・精神科訪問看護</p>
+        <h1 class="hero-title">看護師がうかがいます。<br><em>「ひとりじゃない」</em><br>を大切にしながら。</h1>
+        <p class="hero-text">病気や障害を持った方が、人として等しく住み慣れた街で生活を送ることができるように。ご本人にもご家族にも、そして私たちにも、穏やかな時間が流れることを願って訪問しています。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">無料相談をしてみる</a>
+          <a class="btn btn-ghost" href="#about">かうむについて知る</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="images/hero-tree.jpg" alt="木々の間から光が差し込む様子" width="1400" height="1750">
+        <div class="hero-caption">
+          <b>calm</b>
+          穏やかな日常を、いつもの場所で。
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- かうむとは -->
+  <div class="section">
+    <div class="wrap">
+      <div class="calm-card reveal">
+        <div class="calm-word">
+          <div class="jp">かうむ</div>
+          <div class="eq">＝</div>
+          <div class="en">calm</div>
+          <div class="mean">穏やか</div>
+        </div>
+        <div>
+          <p class="eyebrow">「かうむ」とは</p>
+          <p style="margin:0;">「calm」＝「穏やか」。<br>誰もが等しく穏やかな日常生活を過ごせるようお手伝いをしたい。そんな想いが込められています。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 特長 -->
+  <div class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">ABOUT US</p>
+        <h2 class="section-title">訪問看護ステーションかうむについて<span class="thin">私たちが大切にしている、5つのこと</span></h2>
+      </div>
+
+      <div class="features">
+        <article class="feature reveal">
+          <div class="feature-no">その一</div>
+          <div>
+            <h3>精神の専門性</h3>
+            <p>精神の専門性を生かし、精神面での変化に早期対応できるように支援・サポートを行っております。季節の変わり目、就労、環境の変化など、さまざまな刺激による精神状態の変化や副作用のつらさ。相談しにくい疾患の悩みなども、専門の看護師が一緒に考えながら解決の方向へサポートしていきます。</p>
+          </div>
+        </article>
+
+        <article class="feature reveal">
+          <div class="feature-no">その二</div>
+          <div>
+            <h3>どんな看護師がくる？</h3>
+            <p class="quote">「どんな感じか分からなくて不安だな…」<br>「ステーションを変えたいけど、合わなかったらどうしよう…」</p>
+            <p>かうむには人に不安を与えてしまうスタッフはおりませんが、まだ出会っていない私たちにそんな不安を抱いてしまうのは至極当然のことです。まずはお気軽に「無料相談」にお問い合わせください。</p>
+          </div>
+        </article>
+
+        <article class="feature reveal">
+          <div class="feature-no">その三</div>
+          <div>
+            <h3>社会資源の活用など</h3>
+            <p>人として等しく住み慣れた街で生活を送りたい。けれど治療や療養を継続するにあたり、経済面や社会復帰など心配事は後を絶ちません。かうむではそんな心配事や壁をなくして治療を継続できるよう、関係機関や社会との橋渡しをしたり、利用可能な社会資源の提供や手続きについて専門の知識をもったスタッフが対応するなどの支援も行っています。</p>
+          </div>
+        </article>
+
+        <article class="feature reveal">
+          <div class="feature-no">その四</div>
+          <div>
+            <h3>訪問看護で行うこと</h3>
+            <ul class="care-list">
+              <li>内服の管理や確認を行い、病気との上手な付き合い方を一緒に考えます。</li>
+              <li>対人関係や日常生活で困っていることを聞きながら、対処方法を考えます。</li>
+              <li>抱えている不安なことを聞きながら、症状との関係なども整理します。</li>
+              <li>症状の観察（悪化の早期発見・対応）や、副作用の出現などにも対応します。</li>
+              <li>家族支援、ご家族への疾患教育、対応方法など、支援の仕方をサポートします。</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="feature reveal">
+          <div class="feature-no">その五</div>
+          <div>
+            <h3>その他</h3>
+            <p>かうむのスタッフは動物が好きです。なので訪問時は、アニマルなパートナーさんもいつもどおり自分のおうちでまったり。ケージなしでも大丈夫です！</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <!-- 書類 -->
+  <div class="section docs" style="padding-block:clamp(48px,7vw,76px);">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">DOCUMENTS</p>
+        <h2 class="section-title">各種書類のご案内<span class="thin">クリックするとPDFが開きます</span></h2>
+      </div>
+      <div class="doc-grid reveal">
+        <a class="doc-btn" href="docs/juyo-jiko-setsumeisho.pdf" target="_blank" rel="noopener">
+          <span class="doc-icon">PDF</span>
+          <span class="doc-label"><span class="t">重要事項説明書</span><span class="s">サービス内容・ご利用にあたって</span></span>
+        </a>
+        <a class="doc-btn" href="docs/jigyo-unei-kitei.pdf" target="_blank" rel="noopener">
+          <span class="doc-icon">PDF</span>
+          <span class="doc-label"><span class="t">事業運営規程</span><span class="s">事業の目的・運営の方針</span></span>
+        </a>
+        <a class="doc-btn" href="docs/kujo-taio-manual.pdf" target="_blank" rel="noopener">
+          <span class="doc-icon">PDF</span>
+          <span class="doc-label"><span class="t">苦情対応マニュアル</span><span class="s">ご意見・ご要望への対応について</span></span>
+        </a>
+      </div>
+      <p class="lead" style="margin-top:24px;font-size:.88rem;">訪問看護のお問い合わせは、主治医の先生または「かうむ」まで。<a href="tel:0561502229" style="color:var(--accent-deep);font-weight:700;">TEL 0561-50-2229</a></p>
+    </div>
+  </div>
+
+  <!-- お知らせ抜粋 -->
+  <div class="section">
+    <div class="wrap narrow">
+      <div class="section-head reveal">
+        <p class="eyebrow">NEWS</p>
+        <h2 class="section-title">お知らせ</h2>
+      </div>
+      <div class="news-list reveal" id="home-news"></div>
+      <p style="margin-top:26px;"><a class="btn btn-ghost" href="#news">お知らせ一覧を見る</a></p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="section">
+    <div class="wrap">
+      <div class="calm-card reveal" style="text-align:center;grid-template-columns:1fr;">
+        <div>
+          <p class="eyebrow">まずはお気軽に</p>
+          <h2 class="section-title" style="margin-bottom:16px;">「これって相談していいのかな」<br>という段階で、どうぞ。</h2>
+          <p class="lead" style="margin-inline:auto;">ご本人からでも、ご家族からでも、主治医の先生・関係機関の方からでもかまいません。無料相談を受け付けています。</p>
+          <div class="hero-actions" style="justify-content:center;">
+            <a class="btn btn-primary" href="tel:0561502229">0561-50-2229 に電話する</a>
+            <a class="btn btn-ghost" href="#contact">メールで相談する</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ============================================================
+     かうむについて
+     ============================================================ -->
+<section class="page" id="page-about">
+  <div class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">ABOUT US</p>
+        <h2 class="section-title">訪問看護ステーションかうむについて<span class="thin">私たちが大切にしている、5つのこと</span></h2>
+        <p class="lead">「訪問看護ってどんなことをするの？」「どんな人が来るの？」——はじめての方が気になることを、そのままの言葉でお答えします。</p>
+      </div>
+
+      <div class="features">
+        <article class="feature reveal">
+          <div class="feature-no">その一</div>
+          <div>
+            <h3>精神の専門性</h3>
+            <p>精神の専門性を生かし、精神面での変化に早期対応できるように支援・サポートを行っております。</p>
+            <p>季節の変わり目、就労、環境の変化など、さまざまな刺激による精神状態の変化や副作用のつらさ。相談しにくい疾患の悩みなども、専門の看護師が一緒に考えながら解決の方向へサポートしていきます。</p>
+          </div>
+        </article>
+
+        <article class="feature reveal">
+          <div class="feature-no">その二</div>
+          <div>
+            <h3>どんな看護師がくる？</h3>
+            <p class="quote">「どんな感じか分からなくて不安だな…」<br>「ステーションを変えたいけど、合わなかったらどうしよう…」</p>
+            <p>かうむには人に不安を与えてしまうスタッフはおりませんが、まだ出会っていない私たちにそんな不安を抱いてしまうのは至極当然のことです。</p>
+            <p>まずはお気軽に「無料相談」にお問い合わせください。会ってから決めていただいて、かまいません。</p>
+          </div>
+        </article>
+
+        <article class="feature reveal">
+          <div class="feature-no">その三</div>
+          <div>
+            <h3>社会資源の活用など</h3>
+            <p>人として等しく住み慣れた街で生活を送りたい。けれど治療や療養を継続するにあたり、経済面や社会復帰など心配事は後を絶ちません。</p>
+            <p>かうむではそんな心配事や壁をなくして治療を継続できるよう、関係機関や社会との橋渡しをしたり、利用可能な社会資源の提供や手続きについて専門の知識をもったスタッフが対応するなどの支援も行っています。</p>
+          </div>
+        </article>
+
+        <article class="feature reveal">
+          <div class="feature-no">その四</div>
+          <div>
+            <h3>訪問看護で行うこと</h3>
+            <ul class="care-list">
+              <li>内服の管理や確認を行い、病気との上手な付き合い方を一緒に考えます。</li>
+              <li>対人関係や日常生活で困っていることを聞きながら、対処方法を考えます。</li>
+              <li>抱えている不安なことを聞きながら、症状との関係なども整理します。</li>
+              <li>症状の観察（悪化の早期発見・対応）や、副作用の出現などにも対応します。</li>
+              <li>家族支援、ご家族への疾患教育、対応方法など、支援の仕方をサポートします。</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="feature reveal">
+          <div class="feature-no">その五</div>
+          <div>
+            <h3>その他</h3>
+            <p>かうむのスタッフは動物が好きです。なので訪問時は、アニマルなパートナーさんもいつもどおり自分のおうちでまったり。ケージなしでも大丈夫です！</p>
+          </div>
+        </article>
+      </div>
+
+      <div style="margin-top:clamp(40px,6vw,64px);">
+        <div class="doc-grid">
+          <a class="doc-btn" href="docs/juyo-jiko-setsumeisho.pdf" target="_blank" rel="noopener">
+            <span class="doc-icon">PDF</span>
+            <span class="doc-label"><span class="t">重要事項説明書</span><span class="s">サービス内容・ご利用にあたって</span></span>
+          </a>
+          <a class="doc-btn" href="docs/jigyo-unei-kitei.pdf" target="_blank" rel="noopener">
+            <span class="doc-icon">PDF</span>
+            <span class="doc-label"><span class="t">事業運営規程</span><span class="s">事業の目的・運営の方針</span></span>
+          </a>
+          <a class="doc-btn" href="docs/kujo-taio-manual.pdf" target="_blank" rel="noopener">
+            <span class="doc-icon">PDF</span>
+            <span class="doc-label"><span class="t">苦情対応マニュアル</span><span class="s">ご意見・ご要望への対応について</span></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     事業所概要（理念 ＋ 事業所情報）
+     ============================================================ -->
+<section class="page" id="page-company">
+  <div class="section">
+    <div class="wrap narrow">
+      <div class="section-head">
+        <p class="eyebrow">PHILOSOPHY</p>
+        <h2 class="section-title">理念</h2>
+      </div>
+      <div class="philosophy reveal">
+        <p>訪問看護ステーションかうむは、病気や障害を持った方が、人として等しく住み慣れた街で生活を送ることができるように、看護師が訪問し支援するサービスです。</p>
+        <p>かかりつけの医師や様々な関連機関と連携し、情報共有しながらチームで関わり支援していきます。</p>
+        <p class="strong">「ひとりじゃない」を大切にします。</p>
+        <p>かうむ＝calm は「穏やか」という意味です。<br>利用される方も、ご家族も、そして私達も穏やかに過ごせるようにと思いを込めました。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap narrow">
+      <div class="section-head">
+        <p class="eyebrow">OVERVIEW</p>
+        <h2 class="section-title">訪問看護ステーションかうむ</h2>
+      </div>
+      <div class="table-wrap reveal">
+        <table class="info-table">
+          <tbody>
+            <tr>
+              <th>事業所名</th>
+              <td>訪問看護ステーションかうむ</td>
+            </tr>
+            <tr>
+              <th>管理者</th>
+              <td>江端　崇雄<span class="ruby">エバタ　タカオ</span></td>
+            </tr>
+            <tr>
+              <th>運営法人</th>
+              <td>合同会社calm</td>
+            </tr>
+            <tr>
+              <th>所在地</th>
+              <td>〒488-0057<br>愛知県尾張旭市北山町北新田118番地1<br>ピネ北山 202号室</td>
+            </tr>
+            <tr>
+              <th>電話番号</th>
+              <td><a href="tel:0561502229">0561-50-2229</a></td>
+            </tr>
+            <tr>
+              <th>FAX</th>
+              <td>0561-50-2230</td>
+            </tr>
+            <tr>
+              <th>携帯電話</th>
+              <td><a href="tel:07085094518">070-8509-4518</a></td>
+            </tr>
+            <tr>
+              <th>メール</th>
+              <td><a href="mailto:houmonkango-kaumu@calm29.com">houmonkango-kaumu@calm29.com</a></td>
+            </tr>
+            <tr>
+              <th>介護保険<br>事業所番号</th>
+              <td>2364590220</td>
+            </tr>
+            <tr>
+              <th>営業日</th>
+              <td>月曜日〜金曜日<br>（12月29日〜1月4日を除く）</td>
+            </tr>
+            <tr>
+              <th>営業時間</th>
+              <td>午前9時 〜 午後6時<br><span class="ruby" style="letter-spacing:.04em;">上記のほか、電話等により24時間常時連絡が可能な体制をとっています。</span></td>
+            </tr>
+            <tr>
+              <th>対応エリア</th>
+              <td>尾張旭市・瀬戸市・長久手市・日進市・みよし市<br>名古屋市（千種区・守山区・名東区・天白区・緑区）</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="margin-top:clamp(36px,5vw,52px);">
+        <div class="doc-grid">
+          <a class="doc-btn" href="docs/juyo-jiko-setsumeisho.pdf" target="_blank" rel="noopener">
+            <span class="doc-icon">PDF</span>
+            <span class="doc-label"><span class="t">重要事項説明書</span><span class="s">サービス内容・ご利用にあたって</span></span>
+          </a>
+          <a class="doc-btn" href="docs/jigyo-unei-kitei.pdf" target="_blank" rel="noopener">
+            <span class="doc-icon">PDF</span>
+            <span class="doc-label"><span class="t">事業運営規程</span><span class="s">事業の目的・運営の方針</span></span>
+          </a>
+          <a class="doc-btn" href="docs/kujo-taio-manual.pdf" target="_blank" rel="noopener">
+            <span class="doc-icon">PDF</span>
+            <span class="doc-label"><span class="t">苦情対応マニュアル</span><span class="s">ご意見・ご要望への対応について</span></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     お知らせ
+     ============================================================ -->
+<section class="page" id="page-news">
+  <div class="section">
+    <div class="wrap narrow">
+      <div class="section-head">
+        <p class="eyebrow">NEWS</p>
+        <h2 class="section-title">お知らせ</h2>
+        <p class="lead">かうむからのご案内・お休みのお知らせなどを掲載します。</p>
+      </div>
+      <div class="news-list" id="all-news"></div>
+      <p class="news-sample">
+        ※ 現在表示されているお知らせは<strong>見本</strong>です。実際の内容に差し替えてご利用ください。<br>
+        （差し替え方法：ファイル <code>index.html</code> の中の「お知らせのデータ」と書かれた部分に、日付・分類・本文を並べるだけで追加・変更できます）
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     お問い合わせ
+     ============================================================ -->
+<section class="page" id="page-contact">
+  <div class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">CONTACT</p>
+        <h2 class="section-title">お問い合わせ<span class="thin">「これって相談していいのかな」という段階で、どうぞ。</span></h2>
+        <p class="lead">ご本人からでも、ご家族からでも、主治医の先生・関係機関の方からでもかまいません。無料相談を受け付けています。</p>
+      </div>
+
+      <div class="contact-grid reveal">
+        <div class="contact-card">
+          <span class="ttl">TEL</span>
+          <a class="val" href="tel:0561502229">0561-50-2229</a>
+          <span class="note">受付：月〜金 9:00〜18:00<br>（12/29〜1/4を除く）<br>上記時間外も、電話等により24時間連絡が可能な体制をとっています。</span>
+        </div>
+        <div class="contact-card">
+          <span class="ttl">携帯電話</span>
+          <a class="val" href="tel:07085094518">070-8509-4518</a>
+          <span class="note">お急ぎの際はこちらへ。</span>
+        </div>
+        <div class="contact-card">
+          <span class="ttl">FAX</span>
+          <span class="val">0561-50-2230</span>
+          <span class="note">主治医の先生・関係機関の皆さまからのご連絡もこちらへ。</span>
+        </div>
+        <div class="contact-card">
+          <span class="ttl">E-MAIL</span>
+          <a class="val mail" href="mailto:houmonkango-kaumu@calm29.com">houmonkango-kaumu@calm29.com</a>
+          <span class="note">お返事までお時間をいただく場合があります。</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title" style="font-size:clamp(1.25rem,2.6vw,1.6rem);">メールでのお問い合わせ<span class="thin">下のフォームにご記入いただくと、メールソフトが開きます</span></h2>
+      </div>
+      <form class="form reveal" id="contact-form" style="max-width:760px;">
+        <div class="field">
+          <label for="f-name">お名前<span class="req">必須</span></label>
+          <input type="text" id="f-name" name="name" required autocomplete="name" placeholder="例）山田 花子">
+        </div>
+        <div class="field">
+          <label for="f-relation">お立場</label>
+          <select id="f-relation" name="relation">
+            <option value="ご本人">ご本人</option>
+            <option value="ご家族">ご家族</option>
+            <option value="医療機関の方">医療機関の方</option>
+            <option value="ケアマネジャー・相談支援専門員">ケアマネジャー・相談支援専門員</option>
+            <option value="その他">その他</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-tel">お電話番号</label>
+          <input type="tel" id="f-tel" name="tel" autocomplete="tel" placeholder="例）090-0000-0000">
+        </div>
+        <div class="field">
+          <label for="f-mail">メールアドレス</label>
+          <input type="email" id="f-mail" name="email" autocomplete="email" placeholder="例）sample@example.com">
+        </div>
+        <div class="field">
+          <label for="f-body">ご相談内容<span class="req">必須</span></label>
+          <textarea id="f-body" name="body" required placeholder="お困りのこと、聞いてみたいことを、そのままお書きください。うまくまとまっていなくて大丈夫です。"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit" style="border:none;cursor:pointer;font-family:inherit;">記入内容をメールにする</button>
+        <p class="form-note">
+          ボタンを押すと、お使いの端末のメールソフトが立ち上がり、宛先と本文が入力された状態になります。内容をご確認のうえ送信してください。<br>
+          メールソフトが開かない場合は、お手数ですが <a href="tel:0561502229" style="color:var(--accent-deep);font-weight:700;">0561-50-2229</a> までお電話ください。
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ フッター ============ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-mark">かうむ</span>
+        <p class="footer-addr">
+          訪問看護ステーションかうむ<br>
+          〒488-0057 愛知県尾張旭市北山町北新田118番地1 ピネ北山 202号室<br>
+          TEL 0561-50-2229 ／ FAX 0561-50-2230<br>
+          運営：合同会社calm
+        </p>
+      </div>
+      <nav class="footer-nav">
+        <a href="#home">ホーム</a>
+        <a href="#about">かうむについて</a>
+        <a href="#company">事業所概要</a>
+        <a href="#news">お知らせ</a>
+        <a href="#contact">お問い合わせ</a>
+      </nav>
+    </div>
+    <p class="copyright">© 訪問看護ステーションかうむ / 合同会社calm</p>
+  </div>
+</footer>
+
+<!-- ============ スマホ用の固定バー ============ -->
+<div class="mobile-bar">
+  <a class="m-tel" href="tel:0561502229">電話する</a>
+  <a class="m-mail" href="#contact">相談する</a>
+</div>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ====== お知らせのデータ ======================================
+     ここに追加・変更するだけでお知らせが増やせます。
+     date … 表示する日付   tag … 分類   title … 本文
+     新しいものを上に書いてください。
+     ============================================================ */
+  var NEWS = [
+    { date:"2026.09.14", tag:"お知らせ", title:"【見本】ホームページを公開しました。" },
+    { date:"2026.09.01", tag:"ご案内",   title:"【見本】無料相談を受け付けています。お気軽にお電話ください。" },
+    { date:"2026.08.20", tag:"お知らせ", title:"【見本】訪問看護ステーションかうむを開設しました。" }
+  ];
+
+  function renderNews(el, items){
+    if(!el) return;
+    el.textContent = "";
+    items.forEach(function(n){
+      var row = document.createElement("div");
+      row.className = "news-item";
+      var d = document.createElement("time");
+      d.className = "news-date";
+      d.textContent = n.date;
+      var t = document.createElement("span");
+      t.className = "news-tag";
+      t.textContent = n.tag;
+      var ttl = document.createElement("p");
+      ttl.className = "news-title";
+      ttl.textContent = n.title;
+      row.appendChild(d); row.appendChild(t); row.appendChild(ttl);
+      el.appendChild(row);
+    });
+  }
+  renderNews(document.getElementById("home-news"), NEWS.slice(0,3));
+  renderNews(document.getElementById("all-news"), NEWS);
+
+  /* ====== ページ切り替え ====== */
+  var PAGES = ["home","about","company","news","contact"];
+  var nav = document.getElementById("mainnav");
+  var burger = document.querySelector(".burger");
+
+  function showPage(name, doScroll){
+    if(PAGES.indexOf(name) === -1){ name = "home"; }
+    PAGES.forEach(function(p){
+      var sec = document.getElementById("page-" + p);
+      if(sec){ sec.classList.toggle("is-active", p === name); }
+    });
+    document.querySelectorAll(".nav a").forEach(function(a){
+      a.classList.toggle("is-current", a.getAttribute("href") === "#" + name);
+    });
+    closeNav();
+    revealInit();
+    if(doScroll){ window.scrollTo(0, 0); }
+  }
+
+  function closeNav(){
+    if(nav){ nav.classList.remove("is-open"); }
+    if(burger){
+      burger.setAttribute("aria-expanded","false");
+      burger.setAttribute("aria-label","メニューを開く");
+    }
+  }
+
+  if(burger){
+    burger.addEventListener("click", function(){
+      var open = nav.classList.toggle("is-open");
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+      burger.setAttribute("aria-label", open ? "メニューを閉じる" : "メニューを開く");
+    });
+  }
+
+  window.addEventListener("hashchange", function(){
+    showPage(location.hash.replace("#",""), true);
+  });
+
+  /* ====== スクロールでふわっと表示 ====== */
+  var io = null;
+  function revealInit(){
+    var targets = document.querySelectorAll(".page.is-active .reveal:not(.is-in)");
+    if(window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)){
+      targets.forEach(function(t){ t.classList.add("is-in"); });
+      return;
+    }
+    if(!io){
+      io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){ e.target.classList.add("is-in"); io.unobserve(e.target); }
+        });
+      }, { rootMargin:"0px 0px -8% 0px", threshold:0.05 });
+    }
+    targets.forEach(function(t){ io.observe(t); });
+  }
+
+  /* ====== お問い合わせフォーム → メール作成 ====== */
+  var form = document.getElementById("contact-form");
+  if(form){
+    form.addEventListener("submit", function(ev){
+      ev.preventDefault();
+      var g = function(id){ var el = document.getElementById(id); return el ? el.value.trim() : ""; };
+      var body =
+        "訪問看護ステーションかうむ ご担当者さま\n\n" +
+        "ホームページよりお問い合わせいたします。\n\n" +
+        "----------------------------------------\n" +
+        "お名前：" + g("f-name") + "\n" +
+        "お立場：" + g("f-relation") + "\n" +
+        "電話番号：" + g("f-tel") + "\n" +
+        "メールアドレス：" + g("f-mail") + "\n" +
+        "----------------------------------------\n\n" +
+        "【ご相談内容】\n" + g("f-body") + "\n";
+      var url = "mailto:houmonkango-kaumu@calm29.com"
+        + "?subject=" + encodeURIComponent("ホームページからのお問い合わせ（" + (g("f-name") || "お名前未記入") + "様）")
+        + "&body=" + encodeURIComponent(body);
+      window.location.href = url;
+    });
+  }
+
+  /* ====== 起動 ====== */
+  showPage(location.hash.replace("#",""), false);
+})();
+</script>
