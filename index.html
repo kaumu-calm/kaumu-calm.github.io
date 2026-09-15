@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>訪問看護ステーションかうむ｜尾張旭市の精神科訪問看護</title>
+<title>訪問看護ステーションかうむ｜愛知県尾張旭市の訪問看護</title>
 <meta name="description" content="愛知県尾張旭市の訪問看護ステーションかうむ。精神の専門性を生かし、住み慣れた街での生活を看護師が訪問して支援します。尾張旭市・瀬戸市・長久手市・日進市・みよし市・名古屋市の一部に対応。無料相談を受け付けています。">
 <meta name="format-detection" content="telephone=no">
 
 <!-- LINEやSNSでURLを送ったときに表示される情報 -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="訪問看護ステーションかうむ">
-<meta property="og:title" content="訪問看護ステーションかうむ｜尾張旭市の精神科訪問看護">
+<meta property="og:title" content="訪問看護ステーションかうむ｜愛知県尾張旭市の訪問看護">
 <meta property="og:description" content="「ひとりじゃない」を大切にしながら、看護師がうかがいます。無料相談を受け付けています。TEL 0561-50-2229">
 <meta property="og:url" content="https://kaumu-calm.github.io/">
 <meta property="og:image" content="https://kaumu-calm.github.io/images/hero-tree.jpg">
@@ -175,9 +175,16 @@
 }
 .section-title{
   font-family:var(--mincho);font-weight:600;
-  font-size:clamp(1.45rem,3.2vw,2.05rem);
-  line-height:1.5;letter-spacing:.06em;margin:0;text-wrap:balance;
+  font-size:clamp(1.3rem,3.2vw,2.05rem);
+  line-height:1.6;letter-spacing:.05em;margin:0;
+  /* 日本語は text-wrap:balance を使うと変な位置で折れるため使わない。
+     代わりに文節単位で折り返す auto-phrase を指定（対応ブラウザのみ効きます） */
+  word-break:auto-phrase;
 }
+/* 途中で切れてほしくない言葉のかたまりを包むための印 */
+.nb{display:inline-block;}
+/* 本文も、単語の途中ではなく文節の切れ目で折り返す（対応ブラウザのみ） */
+.kaumu p,.kaumu li{word-break:auto-phrase;}
 .section-title .thin{color:var(--ink-soft);font-size:.62em;letter-spacing:.1em;display:block;margin-top:8px;}
 .lead{color:var(--ink-soft);margin-top:14px;max-width:62ch;}
 
@@ -187,10 +194,11 @@
   font-size:.95rem;font-weight:700;letter-spacing:.06em;
   transition:transform .2s, box-shadow .2s, background .2s;
 }
-.btn-primary{background:var(--accent-deep);color:var(--on-accent);box-shadow:var(--shadow);}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow-lift);}
-.btn-ghost{background:var(--surface);color:var(--accent-deep);border:1px solid var(--accent-soft);}
-.btn-ghost:hover{background:var(--accent-wash);transform:translateY(-2px);}
+/* ↓ .kaumu a{color:inherit} に負けないよう .kaumu を前に付けています（外すと文字色が消えます） */
+.kaumu .btn-primary{background:var(--accent-deep);color:var(--on-accent);box-shadow:var(--shadow);font-weight:700;}
+.kaumu .btn-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow-lift);}
+.kaumu .btn-ghost{background:var(--surface);color:var(--accent-deep);border:1.5px solid var(--accent-soft);}
+.kaumu .btn-ghost:hover{background:var(--accent-wash);transform:translateY(-2px);}
 
 /* キーボード操作時に、今どこを選んでいるか分かるようにする */
 .kaumu a:focus-visible,
@@ -235,9 +243,9 @@
   border-radius:180px 180px 12px 12px;box-shadow:var(--shadow-lift);
 }
 .hero-caption{
-  position:absolute;left:-18px;bottom:14px;max-width:232px;
+  position:absolute;left:-18px;bottom:14px;max-width:264px;
   background:var(--surface);border:1px solid var(--line-soft);
-  padding:12px 18px;border-radius:8px;box-shadow:var(--shadow);
+  padding:12px 16px;border-radius:8px;box-shadow:var(--shadow);
   font-family:var(--mincho);font-size:.82rem;letter-spacing:.06em;line-height:1.65;
 }
 .hero-caption b{display:block;color:var(--accent-deep);font-size:.98rem;letter-spacing:.14em;font-weight:600;margin-bottom:2px;}
@@ -487,7 +495,7 @@
     <div class="hero-bg"></div>
     <div class="wrap hero-inner">
       <div class="hero-copy">
-        <p class="hero-kicker">尾張旭市・精神科訪問看護</p>
+        <p class="hero-kicker">愛知県尾張旭市・訪問看護</p>
         <h1 class="hero-title">看護師がうかがいます。<br><em>「ひとりじゃない」</em><br>を大切にしながら。</h1>
         <p class="hero-text">病気や障害を持った方が、人として等しく住み慣れた街で生活を送ることができるように。ご本人にもご家族にも、そして私たちにも、穏やかな時間が流れることを願って訪問しています。</p>
         <div class="hero-actions">
@@ -499,7 +507,7 @@
         <img src="images/hero-tree.jpg" alt="木々の間から光が差し込む様子" width="1400" height="1750">
         <div class="hero-caption">
           <b>calm</b>
-          穏やかな日常を、いつもの場所で。
+          <span class="nb">穏やかな日常を、</span><span class="nb">いつもの場所で。</span>
         </div>
       </div>
     </div>
@@ -528,7 +536,7 @@
     <div class="wrap">
       <div class="section-head reveal">
         <p class="eyebrow">ABOUT US</p>
-        <h2 class="section-title">訪問看護ステーションかうむについて<span class="thin">私たちが大切にしている、5つのこと</span></h2>
+        <h2 class="section-title"><span class="nb">訪問看護ステーションかうむ</span><span class="nb">について</span><span class="thin">私たちが大切にしている、5つのこと</span></h2>
       </div>
 
       <div class="features">
@@ -544,7 +552,7 @@
           <div class="feature-no">その二</div>
           <div>
             <h3>どんな看護師がくる？</h3>
-            <p class="quote">「どんな感じか分からなくて不安だな…」<br>「ステーションを変えたいけど、合わなかったらどうしよう…」</p>
+            <p class="quote"><span class="nb">「どんな感じか分からなくて</span><span class="nb">不安だな…」</span><br><span class="nb">「ステーションを変えたいけど、</span><span class="nb">合わなかったらどうしよう…」</span></p>
             <p>かうむには人に不安を与えてしまうスタッフはおりませんが、まだ出会っていない私たちにそんな不安を抱いてしまうのは至極当然のことです。まずはお気軽に「無料相談」にお問い合わせください。</p>
           </div>
         </article>
@@ -625,7 +633,7 @@
       <div class="calm-card reveal" style="text-align:center;grid-template-columns:1fr;">
         <div>
           <p class="eyebrow">まずはお気軽に</p>
-          <h2 class="section-title" style="margin-bottom:16px;">「これって相談していいのかな」<br>という段階で、どうぞ。</h2>
+          <h2 class="section-title" style="margin-bottom:16px;font-size:clamp(1.15rem,2.9vw,1.85rem);"><span class="nb">「これって相談していいのかな」</span><br><span class="nb">という段階で、どうぞ。</span></h2>
           <p class="lead" style="margin-inline:auto;">ご本人からでも、ご家族からでも、主治医の先生・関係機関の方からでもかまいません。無料相談を受け付けています。</p>
           <div class="hero-actions" style="justify-content:center;">
             <a class="btn btn-primary" href="tel:0561502229">0561-50-2229 に電話する</a>
@@ -646,7 +654,7 @@
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">ABOUT US</p>
-        <h2 class="section-title">訪問看護ステーションかうむについて<span class="thin">私たちが大切にしている、5つのこと</span></h2>
+        <h2 class="section-title"><span class="nb">訪問看護ステーションかうむ</span><span class="nb">について</span><span class="thin">私たちが大切にしている、5つのこと</span></h2>
         <p class="lead">「訪問看護ってどんなことをするの？」「どんな人が来るの？」——はじめての方が気になることを、そのままの言葉でお答えします。</p>
       </div>
 
@@ -664,7 +672,7 @@
           <div class="feature-no">その二</div>
           <div>
             <h3>どんな看護師がくる？</h3>
-            <p class="quote">「どんな感じか分からなくて不安だな…」<br>「ステーションを変えたいけど、合わなかったらどうしよう…」</p>
+            <p class="quote"><span class="nb">「どんな感じか分からなくて</span><span class="nb">不安だな…」</span><br><span class="nb">「ステーションを変えたいけど、</span><span class="nb">合わなかったらどうしよう…」</span></p>
             <p>かうむには人に不安を与えてしまうスタッフはおりませんが、まだ出会っていない私たちにそんな不安を抱いてしまうのは至極当然のことです。</p>
             <p>まずはお気軽に「無料相談」にお問い合わせください。会ってから決めていただいて、かまいません。</p>
           </div>
@@ -745,7 +753,7 @@
     <div class="wrap narrow">
       <div class="section-head">
         <p class="eyebrow">OVERVIEW</p>
-        <h2 class="section-title">訪問看護ステーションかうむ</h2>
+        <h2 class="section-title"><span class="nb">訪問看護ステーション</span><span class="nb">かうむ</span></h2>
       </div>
       <div class="table-wrap reveal">
         <table class="info-table">
@@ -850,7 +858,7 @@
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">CONTACT</p>
-        <h2 class="section-title">お問い合わせ<span class="thin">「これって相談していいのかな」という段階で、どうぞ。</span></h2>
+        <h2 class="section-title">お問い合わせ<span class="thin"><span class="nb">「これって相談していいのかな」</span><span class="nb">という段階で、どうぞ。</span></span></h2>
         <p class="lead">ご本人からでも、ご家族からでも、主治医の先生・関係機関の方からでもかまいません。無料相談を受け付けています。</p>
       </div>
 
