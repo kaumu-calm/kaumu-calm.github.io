@@ -175,14 +175,17 @@
 }
 .section-title{
   font-family:var(--mincho);font-weight:600;
-  font-size:clamp(1.3rem,3.2vw,2.05rem);
-  line-height:1.6;letter-spacing:.05em;margin:0;
+  /* 画面幅に連動させる。狭い端末でも見出しが途中で折れないようにするため、
+     最小値ではなく 5.2vw（画面幅の5.2%）が効くようにしている */
+  font-size:clamp(1.02rem,5.2vw,2.05rem);
+  line-height:1.6;letter-spacing:.04em;margin:0;
   /* 日本語は text-wrap:balance を使うと変な位置で折れるため使わない。
      代わりに文節単位で折り返す auto-phrase を指定（対応ブラウザのみ効きます） */
   word-break:auto-phrase;
 }
-/* 途中で切れてほしくない言葉のかたまりを包むための印 */
-.nb{display:inline-block;}
+/* 途中で切れてほしくない言葉のかたまり。
+   nowrap で絶対に折り返さない。上の vw 連動により、はみ出しは起きない */
+.nb{display:inline-block;white-space:nowrap;}
 /* 本文も、単語の途中ではなく文節の切れ目で折り返す（対応ブラウザのみ） */
 .kaumu p,.kaumu li{word-break:auto-phrase;}
 .section-title .thin{color:var(--ink-soft);font-size:.62em;letter-spacing:.1em;display:block;margin-top:8px;}
@@ -190,8 +193,10 @@
 
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:10px;
-  padding:15px 30px;border-radius:999px;text-decoration:none;
-  font-size:.95rem;font-weight:700;letter-spacing:.06em;
+  padding:15px clamp(18px,5vw,30px);border-radius:999px;text-decoration:none;
+  /* ボタンの中で文字が2行に割れないよう、幅に連動させたうえで nowrap で固定する */
+  font-size:clamp(.82rem,3.7vw,.95rem);font-weight:700;letter-spacing:.05em;
+  white-space:nowrap;
   transition:transform .2s, box-shadow .2s, background .2s;
 }
 /* ↓ .kaumu a{color:inherit} に負けないよう .kaumu を前に付けています（外すと文字色が消えます） */
@@ -253,7 +258,7 @@
 /* ---------- かうむとは ---------- */
 .calm-card{
   background:var(--surface);border:1px solid var(--line-soft);border-radius:12px;
-  padding:clamp(28px,4.4vw,48px);box-shadow:var(--shadow);
+  padding:clamp(20px,4.4vw,48px);box-shadow:var(--shadow);
   display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,4vw,48px);align-items:center;
 }
 .calm-word{text-align:center;padding-right:clamp(24px,4vw,48px);border-right:1px solid var(--line-soft);}
@@ -436,6 +441,9 @@
   .burger{display:flex;}
   .kaumu{padding-bottom:84px;}
   .mobile-bar{display:flex;}
+  /* スマホではボタンを横いっぱいに。文字が入る幅を確保して折り返しを防ぐ */
+  .hero-actions{flex-direction:column;align-items:stretch;}
+  .hero-actions .btn{width:100%;}
   .feature{grid-template-columns:1fr;gap:8px;}
   .feature-no{padding-top:0;}
   .news-item{grid-template-columns:auto auto;gap:10px 14px;}
@@ -633,7 +641,7 @@
       <div class="calm-card reveal" style="text-align:center;grid-template-columns:1fr;">
         <div>
           <p class="eyebrow">まずはお気軽に</p>
-          <h2 class="section-title" style="margin-bottom:16px;font-size:clamp(1.15rem,2.9vw,1.85rem);"><span class="nb">「これって相談していいのかな」</span><br><span class="nb">という段階で、どうぞ。</span></h2>
+          <h2 class="section-title" style="margin-bottom:16px;font-size:clamp(0.92rem,4.3vw,1.85rem);"><span class="nb">「これって相談していいのかな」</span><br><span class="nb">という段階で、どうぞ。</span></h2>
           <p class="lead" style="margin-inline:auto;">ご本人からでも、ご家族からでも、主治医の先生・関係機関の方からでもかまいません。無料相談を受け付けています。</p>
           <div class="hero-actions" style="justify-content:center;">
             <a class="btn btn-primary" href="tel:0561502229">0561-50-2229 に電話する</a>
